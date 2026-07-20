@@ -1,0 +1,380 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+.profileCard {
+    background-color: #eee;
+}
+
+/* ================= HOME ================= */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 50px;
+    background: linear-gradient(135deg, #ff4e50, #f9d423, #24c6dc, #514a9d);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+/* ================= HEADER ================= */
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 115, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    padding: 18px 30px;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    color: wheat;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    width: 500px;
+    min-height: 500px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    position: relative;
+
+    transform: translateX(100px);
+    opacity: 0;
+    animation: slideIn 1.7s ease forwards;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+
+    border: 4px solid white;
+
+    transform: translateX(100px);
+    opacity: 0;
+    animation: slideIn 1.9s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.card h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.8;
+    opacity: .9;
+    font-size: 17px;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 80px 20px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 45px;
+    color: #444;
+}
+
+.personalInfo,
+.skills,
+.training {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.personalInfo:hover,
+.skills:hover,
+.training:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about div h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about div p {
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: .8;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects {
+    padding: 80px 20px;
+    background-color: #f0f0f0;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: linear-gradient(135deg, #f7f1f1, #dbc9c4);
+    padding: 25px;
+    border-radius: 18px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project h3 {
+    margin-bottom: 15px;
+    color: #ff6600;
+    text-align: center;
+}
+
+.project p {
+    text-align: center;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 45px;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    padding: 30px;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+}
+
+.service p {
+    text-align: center;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 80px 20px;
+    background-color: #fff5e6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact h3 {
+    font-size: 45px;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+}
+
+.contact a {
+    color: #ff7a00;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    color: #ff4e50;
+}
+
+/* ================= FOOTER ================= */
+
+/* .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 17px;
+} */
+
+/* ================= MEDIA ================= */
+
+@media (max-width: 768px) {
+
+    .head {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .card h3 {
+        font-size: 28px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .about h2,
+    .projects h2,
+    .services h2,
+    .contact h3 {
+        font-size: 35px;
+    }
+
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideIn {
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
